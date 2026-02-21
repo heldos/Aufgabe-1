@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package temperature.v1;
+option go_package = "gen/temperature/v1;temperaturev1";
+
+service TemperatureService {
+  rpc CelsiusToKelvin (CelsiusToKelvinRequest) returns (CelsiusToKelvinResponse);
+}
+
+message CelsiusToKelvinRequest {
+  double celsius = 1;
+}
+
+message CelsiusToKelvinResponse {
+  double kelvin = 1;
+}
